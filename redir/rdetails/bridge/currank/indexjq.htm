@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><title>Brian - Current Rankings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<link rel="manifest" href="manifestjq.json"><link href="css/szjq.css" rel="stylesheet" type="text/css">
+<script>$(document).ready(function() {
+	let szProduction=false; if (szProduction) {console.log('IN PROD');} else {console.log('NOT IN PROD');} 
+	szGlobVars.ValidQSreceived=s2QuerySt('c','ned',['ned','niagara','crouchend','southcroydon']); szConf=szConfCH['brian']; //?c=ned niagara c=crouchend c=southcroydon
+	szGlobVars.IntervalDelay=20*1000;
+
+	szGo(szConf,szGlobVars.ValidQSreceived,dbFlds); return;
+} );
+
+function szGo(faConf,ffRestBodyCmd,ffdbFlds) {this.speed = 0; 
+ // this.szNum=setInterval(() => {this.speed += 10;  console.log('now going: ' + this.speed);
+	let szPromise=Promise.resolve($.ajax(	{url:faConf.url, data:ffRestBodyCmd, type:faConf.type, cache:faConf.cache, dataType:faConf.dataType,
+		processData:faConf.processData,	crossDomain:faConf.crossDomain, contentType:faConf.contentType}));
+	szPromise.then(function(response) {s2ProcJQ('Free BriAn',response,ffdbFlds);},function(xhrObj) {console.log('xhrObj=',xhrObj);});
+//	if (this.speed>29) {clearInterval(this.szNum);}
+//  }, faConf.IntervalDelay);
+} 
+
+</script></head><body><div class="container">  <div class="titles"></div>  <div class="wrapper"></div></div>
+<script src="js/varInitjq.js"></script><script src="js/functionsjq.js"></script></body></html>

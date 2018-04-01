@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8" /><title>Brian - Current Rankings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<link href="css/szcr55.css" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json"><meta http-equiv="Cache-control" content="must-revalidate">
+<meta http-equiv="Cache-control" content="no-cache"><meta http-equiv="Cache-control" content="no-store">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+<!-- <link rel="stylesheet" href="css/proj_BrianRank22.out.copy.css" type="text/css">-->
+<script>$(document).ready(function() {szProduction=false; 
+if (szProduction) {console.log('IN PROD');} else {console.log('NOT IN PROD');} 
+
+// szData2=document.getElementById('szData2'); szdbprep('reviews');
+var szParam='ned',szDataType='text',szContentType='text/plain';//'text/xml';// // load();
+var szcnt=0,szNumCalls=3;
+function szRepeat(){szcnt++;console.log('repeat=',szcnt);
+if (szcnt>szNumCalls) {console.log('Ended=',szcnt);szAllResultsIn=true;window.clearInterval();}
+else {
+	szUrl=szUrlroot+szcnt+'.'+szDataType; 
+	//szUrl33=szUrlroot+szRandIntFromInterval(1,3)+'.'+szDataType; console.log('1st=',szUrl22,'2nd=',szUrl33);
+	szPromise=Promise.resolve($.ajax({url:szXUrl,type:'POST',cache:false,dataType:szDataType,data:szParam,processData:false,crossDomain:true,contentType:szContentType}));
+	szPromise.then(function(response) {szProc(response,0);},function(xhrObj) {console.log('xhrObj=',xhrObj);});
+	} 
+}
+
+setInterval(function() { szRepeat(); }, szDelay);
+});
+</script></head><body>
+<div class="szhead">
+	<div class="headings">
+		<div id="szHdrFBr">Free BriAn</div>
+		<div id="szHdrRankings">Rankings</div>
+		<div id="szHdrEventName"><em>Your Event</em></div>
+		<div id="hd">	<div id="szResults">Results in:</div>	</div>
+	</div>
+</div>
+<div class="panes"></div><!-- end of container -->
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="js/szcr66VarInit.js"></script></script><script src="js/szcr55dbfun.js"></script>
+<script src="js/firebaseconfig22.js"></script><script src="js/szcr66ProcXML.js"></script>
+</body></html>

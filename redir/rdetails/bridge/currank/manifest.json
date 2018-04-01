@@ -1,0 +1,21 @@
+{
+  "name": "Web Application Manifest Sample",
+  "icons": [
+    {
+      "src": "./bridge/img/icons/mstile-70x70.png",
+      "sizes": "70x70",
+      "type": "image/png",
+      "density": 1.5
+    },
+    {
+      "src": "./bridge/img/icons/mstile-150x150.png",
+      "sizes": "150x150",
+      "type": "image/png",
+      "density": 3.0
+    }
+
+  ],
+  "start_url": "index.htm",
+  "display": "standalone",
+  "orientation": "landscape"
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8" /><title>ðŸ³ ðŸ‚ ðŸŒ± âš½ ðŸ’¡ ðŸŽ‚ ðŸ‘‘ ðŸ’˜Brian - Current Rankings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="img/icons/favicon/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<link href="css/fsbase.css" rel="stylesheet" type="text/css">
+<link href="css/sz.css" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest78.json"><meta http-equiv="Cache-control" content="must-revalidate">
+<meta http-equiv="Cache-control" content="no-cache"><meta http-equiv="Cache-control" content="no-store">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+</head><body><div class="szContainer"><div class="szhead"></div></div>
+<div class="panes"></div><!-- end of container -->
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="js/szcr78VarInit.js"></script><script src="js/szcr78Utils.js"></script><script src="js/szcr78DB.js"></script>
+<script src="js/firebaseconfig78.js"></script><script src="js/szcr78XMLProc.js"></script>
+<script>document.addEventListener("DOMContentLoaded", szInit);function szInit() {"use strict"; var szProduction=false; 
+//szjs.cmd to start server in C:\dev22\sz.tld\apps\servers\json 
+// look at https://github.com/focusaurus/express_code_structure/blob/master/app/config.js// load();
+// szConf.url='http://wp-extern.rhcloud.com/pub/cebcNSEW2.xml'; // szConf.url='https://httpbin.org/xml';
+// szConf.url='https://www.brianbridge.net/cgi-bin/briancurrankxml.cgi?callback=?'; // console.log('url=',szConf.url);
+var szSecs=1000,szAjCnt=0,szErrCt=[]; szErrCt['CONNECTION_REFUSED']=0,szErrCt['TIMEOUT']=0,szErrCt['UNKNOWN']=0;
+var szGlobConsts={Production: false, FinalSetofResultsDev:'103', PACKAGE:'Free BriAn',HeatCodeNS:'NS',	HeatCodeEW:'EW', HeatCodeAP:'All Pairs', HeatNames:['North/South','East/West']
+}; //if (szGlobConsts.Production) {console.log('IN PROD');} else {console.log('NOT IN PROD');} 
+var szGlobVars={dbSvr:'http://sz.tld/data/datastore/xml', FBDBname :'reviews', NumHeats :1, IntervalDelay:20*1000,ValidQSreceived:false,
+AllResultsIn:false,BoardsPlayed:[],BoardsTotal:[],BoardsLast:0,Item:[],NSheatBool:false,EWheatBool:false,Loops2Date:0,NoChange:false,};
+szGlobVars.ValidQSreceived=s2QuerySt('c','ned',['ned','niagara','crouchend','southcroydon']);
+// southcroydon WEDNESDAY 11.00 am THURSDAY 7.30 pm FRIDAY 7.30 pm SATURDAY 2.15 pm
+// mon tues aft eve richmond Thursday Afternoon 1.45pm
+var szConf={url:'https://www.brianbridge.net/cgi-bin/briancurrankxml.cgi?callback=?', /* 'http://sz.tld:3000/szAPI/posts/1', */data:szGlobVars.ValidQSreceived, timeout:11*szSecs, 
+	type:'POST', contentType:'text/plain', dataType:'text', /* 'text/xml' */cache:false, processData:false, crossDomain:true};		
+// let szIntervalLoopCnt=0;szIntervalLoopCnt=szOuterIntervalLoop(szIntervalNum,szIntervalLoopCnt);
+// if (szIntervalLoopCnt==5) {console.log('limit reached: ' + szIntervalLoopCnt);clearInterval(szIntervalNum);} 
+function s2AjaxPromise(options) {return new Promise(function (resolve, reject) {$.ajax(options).done(resolve).fail(reject); });}
+function s2ProcAjaxerr(ObjXHR) {let fferr='';switch (ObjXHR.statusText) {case "error":fferr='CONNECTION_REFUSED';break;
+case "timeout":fferr='TIMEOUT';break; default:fferr='UNKNOWN';break;}
+szErrCt['CONNECTION_REFUSED']++;
+console.log('CONNECTION_REFUSED=',szErrCt['CONNECTION_REFUSED'],'TIMEOUT=',szErrCt['TIMEOUT']=0,'UNKNOWN=',szErrCt['UNKNOWN']);return true;
+}
+function szProcAjaxDataAAA(data) {var fftest,ffstate=1;fftest=szInnerIntervalLoop($.parseXML(data),szGlobConsts,szGlobVars);// console.log('szProduction=',szProduction);
+if (szGlobVars.NoChange==false) {szAjCnt++;console.log('NO AAAACHANGE!!!!!!');console.log('AJAX Call'+szAjCnt);
+/*	s2AjaxPromise({type:szConf.typeReq, dataType:szConf.typeData, data:szConf.data, contentType:szConf.typeContent, url:szConf.url,
+		cache:szConf.cache, processData:szConf.processData, timeout: szConf.timeout, crossDomain:szConf.crossDomain })*/
+	s2AjaxPromise(szConf).then(function f2FulfillHandler(data) {szProcAjaxDataBBB(data);}, function f2RejectHandler(ObjXHR) {s2ProcAjaxerr(ObjXHR); } ); }
+}
+
+function szProcAjaxDataBBB(data) {szGlobVars.Loops2Date++;var fftest,ffstate=1;fftest=szInnerIntervalLoop($.parseXML(data),szGlobConsts,szGlobVars);
+console.log('ffLoops2Date=',fftest.ffLoops2Date);var szLoopIDX,szHeatIDX,szIDX;
+szLoopIDX=1,szHeatIDX=0,szIDX=4;console.log('Aloop=',szLoopIDX,
+'Aitem=',fftest.ffGlobVars.Item[szLoopIDX][szHeatIDX][szIDX].PairName);//.Item[szLoopIDX][szHeatIDX][szIDX].PairName
+szLoopIDX=1,szHeatIDX=1,szIDX=4;
+// console.log('Bloop=',szLoopIDX,'Bitem=',fftest.ffGlobVars.Item[szLoopIDX][szHeatIDX][szIDX].PairName);
+//.Item[szLoopIDX][szHeatIDX][szIDX].PairName
+console.log('fftest=',fftest.ffLoops2Date);console.groupEnd();if (szGlobVars.NoChange==false) {console.log('NO BBBBBCHANGE!!!!!!');} 
+}
+var szPollVars={PollCt:1,TimeOutIDs:[],TimeOutCnt:0,TimeOuts:[],}
+var szPollConf={MaxPolls:8,TimeoutDefault:20*szSecs, IntervalDefault:11*szSecs, swEnded:false,};
+var szMsg={TimedOut:'SZ:Timed out', PollEnded:'SZ:Poll Ended',Timeouts:'Timeouts Occurred'};var szNotice={PollCt:'Poll Count', };
+
+function szPoll(fn, ffTimeout, ffInterval) {ffTimeout=ffTimeout || szPollConf.TimeoutDefault;ffInterval=ffInterval || szPollConf.IntervalDefault;
+var ffEndTime=Date.now() + ffTimeout; console.log('ffTimeout=',ffTimeout,'ffInterval=',ffInterval,'ffEndTime=',ffEndTime);
+  return new Promise(function(resolve, reject) { (function fffnProm() {fn();szPollVars.PollCt++;var ffnow=Date.now();
+	if (szPollConf.swEnded==true) {resolve(); } // we're done!
+		else if (ffnow < ffEndTime) {szPollVars.TimeOutIDs[szPollVars.PollCt]=setTimeout(fffnProm, ffInterval);} // Condition not met but timeout unelapsed-go again
+		else {szPollVars.TimeOutCnt++;szPollVars.TimeOuts[szPollVars.TimeOutCnt]=ffnow;clearTimeout(szPollVars.TimeOutIDs[ffnow]);
+			szPollVars.TimeOutIDs[szPollVars.PollCt]=setTimeout(fffnProm, ffInterval);// timed out, but continue-do not reject(szMsg.TimedOut); 
+	  }  })();  });
+}
+
+function szGo() {if (szGlobVars.NoChange==false) {szAjCnt++;console.log('AJAX Call'+szAjCnt);
+s2AjaxPromise(szConf).then(function f2FulfillHandler(data) {szProcAjaxDataAAA(data);}, function f2RejectHandler(ObjXHR) {s2ProcAjaxerr(ObjXHR); } );return true;}
+}
+
+function szProcAjaxDataZZZ(data) {//var fftest,ffstate=1;fftest=szInnerIntervalLoop($.parseXML(data),szGlobConsts,szGlobVars);
+console.log('data=',data); //<root sf="f">noslotgiven</root>
+// if (szGlobVars.NoChange==false) {szAjCnt++;console.log('NO AAAACHANGE!!!!!!');console.log('AJAX Call'+szAjCnt);
+//	s2AjaxPromise(szConf).then(function f2FulfillHandler(data) {szProcAjaxDataBBB(data);}, function f2RejectHandler(ObjXHR) {s2ProcAjaxerr(ObjXHR); } ); }
+123123
+	}
+
+function szpGo() {return new Promise(function(resolve, reject) {console.log('71:'+szNotice.PollCt+'=',szPollVars.PollCt);
+	clearTimeout(szPollVars.TimeOutIDs[szPollVars.TimeOutCnt]); if (szPollVars.PollCt==szPollConf.MaxPolls) {szPollConf.swEnded=true;};});
+}
+
+//var szPromise77=Promise.resolve(
+//$.ajax(szConf)	);szPromise77.then(function(response) {szProc77(response,0);},function(xhrObj) {console.log('xhrObj=',xhrObj);});
+
+function szProc77(data) {//var fftest,ffstate=1;fftest=szInnerIntervalLoop($.parseXML(data),szGlobConsts,szGlobVars);
+console.log('77 data=',data);}
+
+szPoll(szGo, szPollConf.TimeoutDefault, szPollConf.IntervalDefault).then(function() {
+	if (szPollVars.TimeOutCnt>0) {console.log(szPollVars.TimeOutCnt+' '+szMsg.Timeouts);szPollVars.TimeOuts.forEach(function(elm){console.log(new Date(elm));});}
+	console.log(szMsg.PollEnded);console.log('Next Step here');
+}).catch(function(e) {if (e==szMsg.TimedOut) {console.log(szMsg.TimedOut,szNotice.PollCt+'=',szPollVars.PollCt);} else {console.log('Error=',e);}});
+// szGo();
+}</script></body></html>

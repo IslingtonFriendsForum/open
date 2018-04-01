@@ -1,0 +1,171 @@
+/* resp media qs */
+:root { 
+  --dbrown: #605838; --dgrey: #404040; --lgrey: #808080; --blue: #002060; 
+  --FSizeLarge: 48px; --FSizeMed: 32px; --FSizeStd: 24px; --FSize5Sixths: 20px; --FSize2Thirds: 16px; 
+  --FSizeHalf: 12px;   --FSizethrd: 8px; 
+  --FSizeSpacer2: 4px; --FWtBig: 775; --FWtStd: 500; 
+}
+/* refresh:(yellow) from cc9600 to a58300 back button (light blue) from 00f4f4 to 00c8c8 */
+body {font-size: 100%; font-family: "Helvetica", Serif;	text-align:center; color: white; line-height: 1;} 
+body {display: grid;align-content: space-between;justify-content: center;grid-template-rows: minmax(auto, 2rem) minmax(auto, 2rem) minmax(auto, 2rem) minmax(auto, 2rem) minmax(auto, 3.5rem) minmax(auto, 2rem);grid-template-columns: 70px 1fr 60px;grid-template-areas: 
+"header header header"
+"evnt1  evnt1  evnt1 "
+"evsu1  evsu1  evsu1 "
+"resu2  resu2  resu2 "
+"heat3  heat3  heat3 "
+"rank5  pair6  perc7 " 
+} 
+body > header { 
+  grid-area: header; 
+} 
+body > .evnt1 { 
+  grid-area: evnt1; 
+} 
+body > .evsu1 { 
+  grid-area: evsu1; 
+} 
+body > .resu2 { 
+  grid-area: resu2; 
+  align-self: stretch; 
+} 
+body > .heat3 { 
+  grid-area: heat3; 
+  align-self: stretch; 
+} 
+body > .rank5 { 
+  grid-area: rank5; 
+} 
+body > .pair6 { 
+  grid-area: pair6; 
+} 
+body > .perc7 { 
+  grid-area: perc7; 
+} 
+
+@media (min-width:640px){
+	:root { 
+  --FSizeLarge: 24px; --FSizeMed: 32px; --FSizeStd: 12px; --FSize5Sixths: 10px; --FSize2Thirds: 8px; 
+  --FSizeHalf: 6px;   --FSizethrd: 4px; 
+  --FSizeSpacer2: 4px; --FWtBig: 375; --FWtStd: 250; 
+	}
+	body {display: grid;align-content: space-between;justify-content: center;grid-template-rows: minmax(auto, 2rem) minmax(auto, 2rem) minmax(auto, 2rem) minmax(auto, 2rem) minmax(auto, 3.5rem) minmax(auto, 2rem) minmax(auto, 3.5rem) minmax(auto, 2rem);grid-template-columns: 70px 1fr 60px;grid-template-areas: 
+"header header header"
+"evnt   evnt   evnt  "
+"evsu   evsu   evsu  "
+"resu   resu   resu  "
+"heat0  heat0  heat0 "
+"rank0  pair0  perc0 "
+"heat1  heat1  heat1 "
+"rank1  pair1  perc1 " 
+	  }
+	body > header { 
+    grid-area: header; 
+  }
+	body > .evnt { 
+    grid-area: evnt; 
+  }
+	body > .evsu { 
+    grid-area: evsu; 
+  }
+	body > .resu { 
+    grid-area: resu; 
+    align-self: stretch; 
+  }
+	body > .heat0 { 
+    grid-area: heat0; 
+    align-self: stretch; 
+  }
+	body > .rank0 { 
+    grid-area: rank0; 
+  }
+	body > .pair0 { 
+    grid-area: pair0; 
+  }
+	body > .perc0 { 
+    grid-area: perc0; 
+  }
+	body > .heat1 { 
+    grid-area: heat1; 
+    align-self: stretch; 
+  }
+	body > .rank1 { 
+    grid-area: rank1; 
+  }
+	body > .pair1 { 
+    grid-area: pair1; 
+  }
+	body > .perc1 { 
+    grid-area: perc1; 
+  }
+}
+	
+@media (min-width: 960px){
+	:root { 
+  --FSizeLarge: 24px; --FSizeMed: 32px; --FSizeStd: 12px; --FSize5Sixths: 10px; --FSize2Thirds: 8px; 
+  --FSizeHalf: 6px;   --FSizethrd: 4px; 
+  --FSizeSpacer2: 4px; --FWtBig: 375; --FWtStd: 250; 
+	}
+	body {display: grid;align-content: space-between;justify-content: center;grid-template-rows: minmax(auto, 2rem) minmax(auto, 2rem) minmax(auto, 2rem) minmax(auto, 2rem) minmax(auto, 3.5rem) minmax(auto, 2rem) minmax(auto, 3.5rem) minmax(auto, 2rem);grid-template-columns: 70px 1fr 60px;grid-template-areas: 
+"header header header"
+"evnt   evnt   evnt  "
+"evsu   evsu   evsu  "
+"resu   resu   resu  "
+"heat0  heat0  heat0 "
+"rank0  pair0  perc0 "
+"heat1  heat1  heat1 "
+"rank1  pair1  perc1 " 
+	  }
+	body > header { 
+    grid-area: header; 
+  }
+	body > .evnt { 
+    grid-area: evnt; 
+  }
+	body > .evsu { 
+    grid-area: evsu; 
+  }
+	body > .resu { 
+    grid-area: resu; 
+    align-self: stretch; 
+  }
+	body > .heat0 { 
+    grid-area: heat0; 
+    align-self: stretch; 
+  }
+	body > .rank0 { 
+    grid-area: rank0; 
+  }
+	body > .pair0 { 
+    grid-area: pair0; 
+  }
+	body > .perc0 { 
+    grid-area: perc0; 
+  }
+	body > .heat1 { 
+    grid-area: heat1; 
+    align-self: stretch; 
+  }
+	body > .rank1 { 
+    grid-area: rank1; 
+  }
+	body > .pair1 { 
+    grid-area: pair1; 
+  }
+	body > .perc1 { 
+    grid-area: perc1; 
+  }
+}	
+
+header {text-align:left; background:  var(--lgrey);}
+.evnt  {font-weight: var(--FWtBig); font-size: var(--FSizeLarge); 
+		border-top: var(--FSizeHalf) solid var(--dbrown);  border-bottom: var(--FSizeSpacer2) solid var(--dbrown);}
+.evsu  {font-style: italic; font-size: var(--FSize5Sixths);border-bottom: var(--FSizeSpacer2) solid var(--lgrey);} 
+.resu,.heat0,.heat1,.rank0,.rank1,.pair0,.pair1,.perc0,.perc1  {font-weight: var(--FWtStd); font-size: var(--FSizeStd); 
+		border-top: var(--FSizeSpacer2) solid var(--dbrown); border-bottom: var(--FSizeSpacer2) solid var(--lgrey);
+		background: var(--dbrown); }
+.rank0,.rank1,.pair0,.pair1,.perc0,.perc1  {border-bottom: var(--FSizeSpacer2) solid var(--lgrey);}
+.heat0,.heat1 {font-size: var(--FSizeMed);}
+.rank0,.rank1,.pair0,.pair1,.perc0,.perc1 {background: black;}
+.evnt, .evsu {background: var(--dbrown);}
+.rank1 {border-bottom: var(--FSizeSpacer2) solid black;}		
+.bloc {text-align:left;}

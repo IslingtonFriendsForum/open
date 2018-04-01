@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8" /><title>Brian - Current Rankings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="js/szProcXmllatest.js"></script>
+<link rel="manifest" href="manifest.json"><meta http-equiv="Cache-control" content="must-revalidate">
+<meta http-equiv="Cache-control" content="no-cache"><meta http-equiv="Cache-control" content="no-store">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+<!-- <link rel="stylesheet" href="css/proj_BrianRank22.out.copy.css" type="text/css">-->
+<link href="css/szflexlatest.css" rel="stylesheet" type="text/css">
+<script>var gA=[];//global array of vars
+var szLoop=1,szLoopMax=4,szLoopGap=1*1000; var szDataType='xml',szUrl='',szUrlroot='cebcNSEW',szPostType='GET';
+var szNewData=false; var szHeatNames=['North/South','East/West'];var szHeatName;
+var szHeatCSS=['heat0','heat1'];var szUseLocalData=false;var szDBroot="http://sz.tld/data/datastore/xml";
+szUrl22=szDBroot+"/cebcNSEW1.xml";	szUrl33=szDBroot+"/cebcNSEW2.xml";szXUrl=szUrl22;
+var szDelay=2*1000;
+var szNS=0,szEW=1; var szHeat=szNS; var szEWHeat=false;var szAllResultsIn=false; 
+var szEventName,szPairs,szFinalSetofResults; var szPromise22,szUrl33,szPromise33;var szCnt=0;
+var szPromData=[];
+var szSec=[],szRoot=[];szRoot[0]=[];szRoot[1]=[];
+	szSec[0]=[];szSec[0][szNS]=[];szSec[0][szEW]=[];szSec[1]=[];szSec[1][szNS]=[];szSec[1][szEW]=[];
+var szXml={	"root"	:[{	"name":"played",	"bcode":"pb"},	{"name":"total",	"bcode":"tb"},
+					{	"name":"type",		"bcode":"gt"}	],
+			"sItem"	:[{	"name":"PairName",	"bcode":"na"},	{"name":"PairNum",	"bcode":"no"},
+					{	"name":"Rank",		"bcode":"ra"},	{"name":"Score",	"bcode":"sc"}	]};
+var d = $.Deferred();					
+function szReadRecA(ffparm){//var szXUrl='https://www.brianbridge.net/cgi-bin/briancurrankxml.cgi?callback=?';
+	$.ajax({url:szXUrl,type:'POST',cache:false,dataType:'text',data:'ned',processData:false,crossDomain:true,contentType:'text/plain'}).done(function(p){d.resolve(p);}).fail(d.reject); return d.promise();}
+
+function szReadRecB(ffparm){//var szXUrl='https://www.brianbridge.net/cgi-bin/briancurrankxml.cgi?callback=?';
+    return $.ajax({url:szXUrl,type:'POST',cache:false,dataType:'text',data:'ned',processData:false,crossDomain:true,contentType:'text/plain'}).pipe(function(p){ return p.address;});}
+
+function load(){ // $.blockUI({message: "Loading..."});
+    var szReadOne = szReadRecA('any1') .done(function(c){return c; });
+   // var szReadTwo = szReadRecB('any2') .done(function(address){$("span#address").html(address) });
+   // $.when(szReadOne, szReadTwo).done(szProc(szReadOne,0));
+    $.when(d).done(szProc(szReadOne,0));}
+$(document).ready(function() {szProduction=false;
+var szParam='ned',szDataType='text',szContentType='text/plain';//'text/xml';// 
+// load();
+var jsPromise = Promise.resolve($.ajax({url:szXUrl,type:'POST',cache:false,dataType:szDataType,data:szParam,processData:false,crossDomain:true,contentType:szContentType}));
+
+jsPromise.then(function(response) {szProc(response,0);}, function(xhrObj) {console.log('xhrObj=',xhrObj);})
+//while (!szAllResultsIn) {// szCnt++;szPromData=[];	//szUrl22=szUrlroot+szRandIntFromInterval(1,3)+'.'+szDataType; 
+	//szUrl33=szUrlroot+szRandIntFromInterval(1,3)+'.'+szDataType; console.log('1st=',szUrl22,'2nd=',szUrl33);
+	// szPromData[0]=sz3Ajax(0); szPromData[1]=sz3Ajax(1);	//var d1=sz4Ajax.Deferred();
+/*	$.when( $.ajax({url:szXUrl,type:'POST',cache:false,dataType:'text',data:'ned',processData:false,crossDomain:true,contentType:'text/plain'})
+).done(function(szPromData22) {szProc(szPromData22,0);
+		// if (szAllResultsIn==false) {setTimeout(function() {	szProc(szPromData33,1);	}, szDelay);} 
+	});	if (szCnt>4) {szAllResultsIn=true;} */ //}
+} );
+function sz3Ajax(ffCnt) { 
+if (szUseLocalData==false) {var ffCntIsOdd=ffCnt % 2;
+// var url='https://www.brianbridge.net/cgi-bin/briancurrankxml.cgi?callback=?';
+$.ajax({url:szXUrl,type:'POST',cache:false,dataType:'text',data:'ned',processData:false,crossDomain:true,contentType:'text/plain'})
+.fail (function(jqxhr, textStatus, errorThrown)  {console.log("Error: " , textStatus , " : " + errorThrown) ; })
+.done (function(xmlData) {szPromData[ffCntIsOdd]=xmlData; console.log('hello52',szPromData[ffCntIsOdd]);});
+
+return szPromData[ffCntIsOdd]; } // }); .done (function(xmlData) {ffRes=xmlData;}); return ffRes;}
+else {szProcXML(szData());} }
+
+function sz4Ajax() { 
+// var url='https://www.brianbridge.net/cgi-bin/briancurrankxml.cgi?callback=?';
+$.ajax({url:szXUrl,type:'POST',cache:false,dataType:'text',data:'ned',processData:false,crossDomain:true,contentType:'text/plain'})
+.fail (function(jqxhr, textStatus, errorThrown)  {console.log("Error: " , textStatus , " : " + errorThrown) ; })
+.done (function(xmlData) {szPromData[0]=xmlData; console.log('hello52',szPromData[ffCntIsOdd]);});}
+// }); .done (function(xmlData) {ffRes=xmlData;}); return ffRes;}
+	
+</script></head><body><!-- <div id="myRank">asdasd</div><table data-table="col-two" id="szrankings22"></table>
+<script src="js/EQCSS.min.js"></script>-->
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>-->
+<!-- <script type="text/javascript" src="js/jquery.min.300.js"></script><script src="js/brcurrank22.js">-->
+<main></main>
+<div class="szBlock0"></div>
+<div class="szBlock1"></div>
+</body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8" /><title>Brian - Current Rankings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<link href="css/szflexlatest.css" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json"><meta http-equiv="Cache-control" content="must-revalidate">
+<meta http-equiv="Cache-control" content="no-cache"><meta http-equiv="Cache-control" content="no-store">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+<!-- <link rel="stylesheet" href="css/proj_BrianRank22.out.copy.css" type="text/css">-->
+<script>$(document).ready(function() {
+szProduction=false; if (!szProduction) {console.log('NOT IN PROD');} else {console.log('IN PROD');}
+
+// szData2=document.getElementById('szData2'); szdbprep('reviews');
+var szParam='ned',szDataType='text',szContentType='text/plain';//'text/xml';// // load();
+
+var szPromise=Promise.resolve($.ajax({url:szXUrl,type:'POST',cache:false,dataType:szDataType,data:szParam,processData:false,
+	crossDomain:true,contentType:szContentType}));
+szPromise.then(function(response) {szProc(response,0);},function(xhrObj) {console.log('xhrObj=',xhrObj);});
+
+} );
+</script></head><body><main></main>
+<div class="container"><div class="szBlock1 headings"></div><div id="r1">Free Brian</div><div id="r2">Rankings</div><div id="r3"><em>Wimbledon Village Cafe Bridge 2016</em></div><div id="hd"><div id="r4">Results in:101/308 (32.79%)</div></div>
+<div class="r5">Heat: North/South</div><section><div class="column">Rank&nbsp;</div><div class="column">Name</div><div class="column">%&nbsp;&nbsp;</div></section>
+<div class="table-row szColumn"><section><div class="column">1</div><div class="column">111NSPam Townsend &amp; Ned Paul</div><div class="column">60.83</div></section></div><div class="table-row szColumn"><section><div class="column">2</div><div class="column" style="background:#333333">David Farrant &amp; Joyce Farrant</div><div class="column" style="background:#333333">60.00</div></section></div><div class="table-row szColumn"><section><div class="column">3</div><div class="column">Tim McDonnell &amp; John Page</div><div class="column">54.17</div></section></div><div class="table-row szColumn"><section><div class="column">4</div><div class="column" style="background:#333333">Sue Perin &amp; Karen Fearon</div><div class="column" style="background:#333333">52.50</div></section></div><div class="table-row szColumn"><section><div class="column">5=</div><div class="column">Mike Shaw &amp; Libby Lodh</div><div class="column">46.67</div></section></div><div class="table-row szColumn"><section><div class="column">5=</div><div class="column" style="background:#333333">Jayne Barber &amp; Peter Tingle</div><div class="column" style="background:#333333">46.67</div></section></div><div class="table-row szColumn"><section><div class="column">7</div><div class="column">Sue Martin &amp; Hal Hazine</div><div class="column">40.00</div></section></div><div class="table-row szColumn"><section><div class="column">8</div><div class="column" style="background:#333333">Isia Greene &amp; Alice Webster</div><div class="column" style="background:#333333">39.17</div></section></div><div class="r5">Heat: East/West</div><section><div class="column">Rank&nbsp;</div><div class="column">Name</div><div class="column">%&nbsp;&nbsp;</div></section>
+<div class="table-row szColumn"><section><div class="column">1</div><div class="column">111EWPam Townsend &amp; Ned Paul</div><div class="column">60.83</div></section></div><div class="table-row szColumn"><section><div class="column">2</div><div class="column" style="background:#333333">David Farrant &amp; Joyce Farrant</div><div class="column" style="background:#333333">60.00</div></section></div><div class="table-row szColumn"><section><div class="column">3</div><div class="column">Tim McDonnell &amp; John Page</div><div class="column">54.17</div></section></div><div class="table-row szColumn"><section><div class="column">4</div><div class="column" style="background:#333333">Sue Perin &amp; Karen Fearon</div><div class="column" style="background:#333333">52.50</div></section></div><div class="table-row szColumn"><section><div class="column">5=</div><div class="column">Mike Shaw &amp; Libby Lodh</div><div class="column">46.67</div></section></div><div class="table-row szColumn"><section><div class="column">5=</div><div class="column" style="background:#333333">Jayne Barber &amp; Peter Tingle</div><div class="column" style="background:#333333">46.67</div></section></div><div class="table-row szColumn"><section><div class="column">7</div><div class="column">Sue Martin &amp; Hal Hazine</div><div class="column">40.00</div></section></div><div class="table-row szColumn"><section><div class="column">8</div><div class="column" style="background:#333333">Isia Greene &amp; Alice Webster</div><div class="column" style="background:#333333">39.17</div></section></div></div>
+
+</body></html>

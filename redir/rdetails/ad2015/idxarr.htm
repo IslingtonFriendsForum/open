@@ -1,0 +1,30 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>scroll</title>
+<meta name="viewport" content="width=device-width">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/jquery.fullPage2.6.0.css">
+<style>@charset 'utf-8';
+.section {text-align:center;}
+.arrowUp, .arrowDown{position:fixed;    z-index:99;    cursor: pointer;    width: 0;    height: 0;    border-style: solid;    margin-left: -38px;    left: 50%;}
+.arrowDown{    bottom: 20px;    border-width: 38.5px 34px 0 38.5px;    border-color: #fff transparent transparent transparent;}
+.arrowUp{    top: 20px;    border-width: 0 38.5px 34px 38.5px;    border-color: transparent transparent #fff transparent;}
+</style></head>
+<body><div id="fullpage">
+    <div class="section">One</div>
+    <div class="section">
+        <div class="slide">
+            <div class="demo">Demo</div>Two</div>
+        <div class="slide">Three</div>
+    </div>
+    <div class="section">Third</div>
+    <div class="section">Four</div>
+</div>
+<div class="arrowUp"></div>
+<div class="arrowDown"></div>
+
+	<!-- BigVideo Dependencies -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="js/jquery/jquery.fullPage2.6.2.js"></script>
+    <!-- Demo -->
+    <script>$('#fullpage').fullpage({sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],});
+	$('.arrowUp').click(function(){$.fn.fullpage.moveSectionUp();}); $('.arrowDown').click(function(){$.fn.fullpage.moveSectionDown();});</script></body></html>
